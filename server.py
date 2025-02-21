@@ -1,11 +1,9 @@
 from flask import Flask, render_template, request, redirect
-import csv
 import os
+import mysql.connector
+from mysql.connector import Error
 
 app = Flask(__name__)
-
-# Configurable database file path
-db_file = os.getenv("DB_FILE", "database.csv")
 
 
 @app.route("/")
@@ -21,7 +19,7 @@ def submit_form():
         message = request.form.get("message")
 
         if name and email and message:
-            save_to_csv(name, email, message)
+            save_to_mysql(name, email, message)
             return redirect("/thank_you")
 
     return redirect("/")
@@ -31,16 +29,27 @@ def submit_form():
 def thank_you():
     return render_template("thank_you.html")
 
-# Function to save form data to CSV
 
-
-def save_to_csv(name, email, message):
+def save_to_mysql(name, email, message):
     try:
-        with open(db_file, mode="a", newline="", encoding="utf-8") as file:
-            writer = csv.writer(file)
-            writer.writerow([name, email, message])
-    except Exception as e:
-        print(f"Error writing to CSV: {e}")
+        connection = mysql.connector.connect(
+            host='localhost',
+            database='portfolio',
+            user='root',
+            password='root'
+        )
+
+        if connection.is_connected():
+            cursor = connection.cursor()
+            sql_insert_query = """INSERT INTO form_data (name, email, message) VALUES (%s, %s, %s)"""
+            cursor.execute(sql_insert_query, (name, email, message))
+            connection.commit()
+            cursor.close()
+    except Error as e:
+        print(f"Error while connecting to MySQL: {e}")
+    finally:
+        if connection.is_connected():
+            connection.close()
 
 
 if __name__ == "__main__":
