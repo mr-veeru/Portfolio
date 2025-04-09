@@ -1,14 +1,8 @@
 [
     {
-        "name": "Bannuru Veerendra",
-        "email": "mr.veeru68@gmail.com",
-        "message": "lkmk",
+        "name": "Test",
+        "email": "test@gmail.com",
+        "message": "Hello",
         "timestamp": "2025-04-01 14:43:41"
-    },
-    {
-        "name": "Bannuru Veerendra",
-        "email": "mr.veeru68@gmail.com",
-        "message": "this is new one",
-        "timestamp": "2025-04-09 09:26:49"
     }
 ]
