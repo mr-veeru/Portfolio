@@ -1,8 +1,6 @@
 # 🚀 Portfolio Website
 
-<div align="center">
-  <img src="static/images/profile.jpg" alt="Portfolio Preview" width="600"/>
-  
+<div align="center">  
   [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
   [![Flask](https://img.shields.io/badge/Flask-3.1.0-green.svg)](https://flask.palletsprojects.com/)
   [![Status](https://img.shields.io/badge/Status-Active-success.svg)]()
