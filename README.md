@@ -137,4 +137,4 @@ Bannuru Veerendra -
   </a>
 </div>
 
-Project Link: [https://github.com/mr-veeru/portfolio](https://veeru68.pythonanywhere.com/)
+Project Link: [Live Demo](https://veeru68.pythonanywhere.com/)
