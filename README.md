@@ -139,9 +139,3 @@ portfolio/
 Bannuru Veerendra - [@mr-veeru](https://github.com/mr-veeru) - mr.veeru68@gmail.com
 
 Project Link: [https://github.com/mr-veeru/portfolio](https://github.com/mr-veeru/portfolio)
-
-## 🙏 Acknowledgments
-
-- Font Awesome for amazing icons
-- Flask community for the incredible framework
-- Special thanks to the open-source community 
