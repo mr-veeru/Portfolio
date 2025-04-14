@@ -124,6 +124,7 @@ portfolio/
 
 ## 📞 Contact
 
+Bannuru Veerendra -
 <div align="center">
   <a href="https://github.com/mr-veeru">
     <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
@@ -136,6 +137,4 @@ portfolio/
   </a>
 </div>
 
-Bannuru Veerendra - [@mr-veeru](https://github.com/mr-veeru) - mr.veeru68@gmail.com
-
-Project Link: [https://github.com/mr-veeru/portfolio](https://github.com/mr-veeru/portfolio)
+Project Link: [https://github.com/mr-veeru/portfolio](https://veeru68.pythonanywhere.com/)
