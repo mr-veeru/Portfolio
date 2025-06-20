@@ -89,7 +89,7 @@ portfolio/
 │   └── form_submissions.json
 ├── static/                  # Static assets
 │   ├── assets/
-│   │   ├── css/            # Compiled CSS
+│   │   ├── resume/            # Resume PDF
 │   │   ├── js/             # JavaScript files
 │   └── images/             # Image assets
 ├── templates/              # HTML templates
