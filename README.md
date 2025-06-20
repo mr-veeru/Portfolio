@@ -37,7 +37,6 @@ A personal portfolio website built with Flask, showcasing my skills, experience,
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
-  <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="Sass"/>
 </div>
 
 ## 🚀 Quick Start
@@ -92,7 +91,6 @@ portfolio/
 │   ├── assets/
 │   │   ├── css/            # Compiled CSS
 │   │   ├── js/             # JavaScript files
-│   │   └── sass/           # SASS source files
 │   └── images/             # Image assets
 ├── templates/              # HTML templates
 │   ├── index.html         # Main portfolio page
@@ -107,7 +105,6 @@ portfolio/
 ### 🎯 Contact Form
 - 📝 Form submissions stored in JSON format
 - ✅ Client and server-side validation
-- 📧 Automatic email notifications
 - 🎉 Thank you page confirmation
 
 ### 🎨 Responsive Design
