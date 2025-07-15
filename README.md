@@ -32,10 +32,10 @@ A personal portfolio website built with Flask, showcasing my skills, experience,
 ## 🛠️ Tech Stack
 
 <div align="center">
-  Python
-  Flask
-  HTML5
-  CSS3
+  Python | 
+  Flask | 
+  HTML5 | 
+  CSS3 | 
   JavaScript
 </div>
 
