@@ -5,6 +5,9 @@ This module contains the Flask application setup and routing for the portfolio w
 """
 
 from flask import Flask
+
+from src.config import Config
+from src.logger import setup_logging
 from src.routes.index import index_bp
 
 
@@ -16,7 +19,15 @@ def create_app() -> Flask:
         Flask: Configured Flask application instance
     """
     app = Flask(__name__)
+    app.config.from_object(Config)
+
+    # Register blueprints
     app.register_blueprint(index_bp)
+
+    # Setup logging (only in production)
+    if not Config.DEBUG:
+        setup_logging(app)
+
     return app
 
 
