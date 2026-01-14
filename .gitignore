@@ -28,3 +28,7 @@ Thumbs.db
 # Flask
 instance/
 .webassets-cache
+
+# Logs
+logs/
+*.log

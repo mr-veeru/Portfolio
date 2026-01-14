@@ -5,6 +5,7 @@ This module contains the Flask application setup and routing for the portfolio w
 """
 
 from flask import Flask
+from src.routes.index import index_bp
 
 
 def create_app() -> Flask:
@@ -15,22 +16,12 @@ def create_app() -> Flask:
         Flask: Configured Flask application instance
     """
     app = Flask(__name__)
+    app.register_blueprint(index_bp)
     return app
 
 
 # Initialize the Flask application
 app = create_app()
-
-
-@app.route('/')
-def index():
-    """
-    Home page route handler.
-
-    Returns:
-        str: Welcome message for the portfolio website
-    """
-    return 'Hello, World!'
 
 
 if __name__ == '__main__':
