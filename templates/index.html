@@ -5,16 +5,575 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Veerendra Bannuru - Backend Software Engineer Portfolio">
     <title>Veerendra Bannuru | Backend Software Engineer Portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- External Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/portfolio.css') }}">
 </head>
 <body>
-    <main>
-        <h1>Portfolio</h1>
-        <p>Welcome to my portfolio</p>
-        <p>This is a simple portfolio website built with Flask</p>
-        <p>It is a work in progress and will be updated soon</p>
-        <p>Thank you for visiting</p>
-    </main>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- Skip to main content for accessibility -->
+    <a href="#home" class="skip-to-main">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home" class="logo-link" aria-label="Home">
+                    <span class="logo-text">Portfolio</span>
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu" role="menubar">
+                <li role="none"><a href="#home" class="nav-link active" role="menuitem">Home</a></li>
+                <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+                <li role="none"><a href="#experience" class="nav-link" role="menuitem">Experience</a></li>
+                <li role="none"><a href="#education" class="nav-link" role="menuitem">Education</a></li>
+                <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+                <li role="none"><a href="#certifications" class="nav-link" role="menuitem">Certifications</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="home" class="intro">
+        <div class="intro-content">
+            <div class="intro-text">
+                <h1 class="intro-title">
+                    <span class="greeting">Hi, I'm</span>
+                    <span class="name">Veerendra</span>
+                    <span class="role">Backend Software Engineer</span>
+                </h1>
+                <p class="intro-description">
+                    Backend Software Engineer with 2 years of experience building scalable web applications and RESTful APIs.
+                    Expert in Python, Flask, and database design. I architect robust backend systems, optimize performance,
+                    and deliver production-ready software solutions that power modern web applications.
+                </p>
+                <div class="intro-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                    <a href="{{ url_for('static', filename='documents/bannuru-veerendra-resume.pdf') }}" id="resume-btn" class="btn btn-resume" download>
+                        <i class="fas fa-download"></i>
+                        <span>Download Resume</span>
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/mr-veeru" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/veerendra-bannuru-900934215" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:mr.veeru68@gmail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <button class="scroll-indicator" id="scroll-to-about" aria-label="Scroll to next section">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">01.</span>
+                About Me
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a Backend Software Engineer specializing in building scalable web applications and robust API systems. 
+                        With 2 years of hands-on experience in Python and Flask, I design and develop high-performance backend services 
+                        that handle complex business logic, manage data efficiently, and integrate seamlessly with modern frontend frameworks.
+                    </p>
+                    <p>
+                        My core expertise includes architecting RESTful APIs, designing relational database schemas, implementing 
+                        authentication & authorization systems, and deploying applications to cloud platforms. I'm passionate about 
+                        writing clean, testable code, following software engineering best practices, and building systems that scale 
+                        with business growth. I thrive in Agile environments, collaborating with cross-functional teams to deliver 
+                        production-quality software solutions.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="14">0</div>
+                            <div class="stat-label">GitHub Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="2">0</div>
+                            <div class="stat-label">Live Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="2">0</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <img src="{{ url_for('static', filename='documents/profile.jpg') }}" alt="Veerendra Bannuru - Software Engineer & Full Stack Developer" class="profile-image" loading="lazy" width="400" height="400">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">02.</span>
+                Professional Experience
+            </h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-dot"></div>
+                    <div class="experience-content">
+                        <div class="experience-period">Aug 2024 - Present</div>
+                        <h3 class="experience-title">Backend Software Engineer</h3>
+                        <div class="experience-company">Por's and Rao's Studio – Bengaluru, India</div>
+                        <ul class="experience-description">
+                            <li>Architected and developed Python-based backend systems and APIs using modern software engineering practices</li>
+                            <li>Built and maintained Python libraries and frameworks, implementing new features, optimizations, and performance improvements</li>
+                            <li>Designed scalable software solutions that handle complex business logic and data processing requirements</li>
+                            <li>Managed codebase using Git/Bitbucket, implementing CI/CD practices and ensuring code quality through code reviews</li>
+                            <li>Authored 10+ comprehensive technical documentation, API specifications, and system architecture documents</li>
+                            <li>Deployed and maintained production software applications, ensuring high availability and performance</li>
+                        </ul>
+                        <div class="experience-tags">
+                            <span class="experience-tag">Python</span>
+                            <span class="experience-tag">Backend Development</span>
+                            <span class="experience-tag">API Development</span>
+                            <span class="experience-tag">Software Architecture</span>
+                            <span class="experience-tag">Git/Bitbucket</span>
+                            <span class="experience-tag">Technical Documentation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-dot"></div>
+                    <div class="experience-content">
+                        <div class="experience-period">Apr 2024 - Jul 2024</div>
+                        <h3 class="experience-title">Backend Software Engineer (Full-time Contract)</h3>
+                        <div class="experience-company">Deepnet Labs – Bengaluru, India</div>
+                        <ul class="experience-description">
+                            <li>Developed robust Python-based backend services and RESTful APIs for web applications</li>
+                            <li>Designed and implemented database schemas, optimized queries, and ensured data integrity</li>
+                            <li>Built scalable software systems with proper error handling, logging, and monitoring capabilities</li>
+                            <li>Collaborated with frontend developers and product teams to deliver end-to-end software solutions</li>
+                            <li>Wrote comprehensive unit tests and integration tests, maintaining high code coverage and quality</li>
+                            <li>Participated in Agile sprints, code reviews, and technical discussions to improve system architecture</li>
+                        </ul>
+                        <div class="experience-tags">
+                            <span class="experience-tag">Python</span>
+                            <span class="experience-tag">Backend APIs</span>
+                            <span class="experience-tag">Database Design</span>
+                            <span class="experience-tag">Software Testing</span>
+                            <span class="experience-tag">Agile Development</span>
+                            <span class="experience-tag">Git/GitHub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">03.</span>
+                Education
+            </h2>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-dot"></div>
+                    <div class="education-content">
+                        <div class="education-period">2019 – 2023</div>
+                        <h3 class="education-title">Bachelor of Technology (B.Tech)</h3>
+                        <div class="education-institution">Information Science and Technology</div>
+                        <div class="education-location">Presidency University, Bengaluru, India</div>
+                        <div class="education-grade">CGPA: 8.21</div>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-dot"></div>
+                    <div class="education-content">
+                        <div class="education-period">2017 – 2019</div>
+                        <h3 class="education-title">Higher Secondary Education</h3>
+                        <div class="education-institution">Grade 12, MPC</div>
+                        <div class="education-location">Narayana Junior College, Andhra Pradesh, India</div>
+                        <div class="education-grade">CGPA: 9.03</div>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-dot"></div>
+                    <div class="education-content">
+                        <div class="education-period">2017</div>
+                        <h3 class="education-title">Secondary Education</h3>
+                        <div class="education-institution">Grade 10</div>
+                        <div class="education-location">Good Shepherd English Medium School, Andhra Pradesh, India</div>
+                        <div class="education-grade">CGPA: 9.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">04.</span>
+                Skills & Technologies
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title">Programming & Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">React.js</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="category-title">Backend & Architecture</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">OOP</span>
+                        <span class="skill-tag">JWT Authentication</span>
+                        <span class="skill-tag">API Security</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="category-title">Databases & ORM</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Supabase</span>
+                        <span class="skill-tag">SQLAlchemy</span>
+                        <span class="skill-tag">Redis</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="category-title">Data Science & ML</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">scikit-learn</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="category-title">DevOps & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Render</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">VS Code</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="category-title">Frontend Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React.js</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">05.</span>
+                Featured Projects
+            </h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">DevShare</h3>
+                            <div class="project-links">
+                                <a href="https://devshare-68.web.app/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Project">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/mr-veeru" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Full-stack web application built with ReactJS frontend and Flask/Python backend. Architected scalable 
+                            RESTful API endpoints for user authentication, project management, and social features. Implemented 
+                            real-time data synchronization, optimized database queries, and deployed on cloud infrastructure. 
+                            Designed secure authentication system with JWT tokens and role-based access control.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">ReactJS</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">AccessVault</h3>
+                            <div class="project-links">
+                                <a href="https://accessvault-api-8shv.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Project">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/mr-veeru" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Enterprise-grade backend API system for user management and authentication. Built with Flask and PostgreSQL, 
+                            featuring secure JWT-based authentication with token rotation, password hashing (bcrypt), and role-based 
+                            access control. Implemented comprehensive admin APIs for user management, audit logging, and system monitoring. 
+                            Added rate limiting, API documentation with Swagger, and production-ready error handling. Deployed on cloud 
+                            infrastructure with high availability.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Flask</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">JWT</span>
+                            <span class="tag">Redis</span>
+                            <span class="tag">Swagger</span>
+                            <span class="tag">Render</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">SecurePay Fraud Detection</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/mr-veeru" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Machine Learning-powered fraud detection system built with Python. Developed backend services that process 
+                            financial transactions in real-time, implementing ensemble ML models for high-accuracy fraud detection. 
+                            Built RESTful APIs for transaction processing, integrated with database systems for pattern analysis, 
+                            and created monitoring dashboards. Designed scalable architecture to handle high-volume transaction processing.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">TensorFlow</span>
+                            <span class="tag">scikit-learn</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-music"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Music Hub</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/mr-veeru" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Full-stack music streaming platform built with Java Spring Boot backend and MySQL database. Architected 
+                            RESTful APIs for user management, playlist operations, and media metadata. Integrated Razorpay payment 
+                            gateway APIs for subscription management. Implemented secure authentication, role-based access control, 
+                            and optimized database queries for high-performance media catalog operations. Designed scalable backend 
+                            architecture to handle concurrent user requests.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Razorpay</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-building"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">HRMS Logging System</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/mr-veeru" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Enterprise microservices architecture built with Java Spring Boot. Designed and implemented multiple 
+                            backend services with RESTful APIs, integrated distributed tracing using Zipkin, and implemented 
+                            service discovery patterns. Built API gateway for request routing, implemented circuit breakers for 
+                            fault tolerance, and set up centralized logging and monitoring systems. Designed scalable microservices 
+                            architecture following best practices.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">Zipkin</span>
+                            <span class="tag">Dynatrace</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">GuessMaster-2025</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/mr-veeru" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            An interactive, full-stack web-based number guessing game that combines strategy and competition 
+                            with real-time score tracking. It offers both single-player and multiplayer modes, where players 
+                            are challenged to guess a randomly generated number within a limited number of attempts. Features 
+                            efficient error handling, logging, and a sleek, responsive user interface. High scores are stored 
+                            for both modes, allowing players to compete for the top spot.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">06.</span>
+                Certifications
+            </h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="certification-title">Full Stack Development Training</h3>
+                    <div class="certification-issuer">Kodnest</div>
+                    <div class="certification-description">Full Stack Web Development</div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="certification-title">Machine Learning Course</h3>
+                    <div class="certification-issuer">Unschool</div>
+                    <div class="certification-description">Machine Learning Python</div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="certification-title">National Conference Paper Presentation</h3>
+                    <div class="certification-issuer">National Conference</div>
+                    <div class="certification-description">Research Technical Presentation</div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3 class="certification-title">HTML, JavaScript, & Bootstrap</h3>
+                    <div class="certification-issuer">Udemy</div>
+                    <div class="certification-description">HTML5 JavaScript Bootstrap</div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="certification-title">Python Developer</h3>
+                    <div class="certification-issuer">Sololearn</div>
+                    <div class="certification-description">Python Programming</div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <h3 class="certification-title">Java Developer</h3>
+                    <div class="certification-issuer">Sololearn</div>
+                    <div class="certification-description">Java Programming</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/portfolio.js') }}" defer></script>
 </body>
 </html>

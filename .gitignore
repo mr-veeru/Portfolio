@@ -32,3 +32,6 @@ instance/
 # Logs
 logs/
 *.log
+
+# Static files
+static/documents/

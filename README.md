@@ -48,9 +48,9 @@ Portfolio/
 │       └── index.py       # Index and health check routes
 ├── static/                # Static files
 │   ├── css/               # Stylesheets
-│   │   └── style.css      # Main stylesheet
+│   │   └── portfolio.css  # Main stylesheet
 │   └── js/                # JavaScript files
-│       └── script.js      # Main JavaScript file
+│       └── portfolio.js  # Main JavaScript file
 └── templates/             # HTML templates
     └── index.html         # Homepage template
 ```
