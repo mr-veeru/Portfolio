@@ -50,7 +50,6 @@ def setup_logging(app: Flask) -> None:
 
         # Suppress verbose third-party logs in production
         logging.getLogger('werkzeug').setLevel(logging.WARNING)
-        logging.getLogger('flask_limiter').setLevel(logging.WARNING)
 
         app.logger.info('Logging configured for production')
 

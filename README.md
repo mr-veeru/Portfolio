@@ -6,8 +6,6 @@ A modern portfolio website built with Flask, showcasing projects, skills, and pr
 
 - Clean and responsive design
 - Fast and lightweight Flask backend
-- Rate limiting for API protection
-- Compression for optimized performance
 - Environment-based configuration
 
 ## Installation
@@ -36,23 +34,27 @@ The application will be available at `http://localhost:5000`
 
 ```
 Portfolio/
-├── app.py                 # Main application file
-├── requirements.txt       # Python dependencies
-├── .gitignore             # Git ignore rules
-├── .env.example           # Environment variables template
-├── README.md              # Project documentation
-├── src/                   # Source code package
-│   ├── config.py          # Application configuration
-│   ├── logger.py          # Logging configuration
-│   └── routes/            # Route handlers
-│       └── index.py       # Index and health check routes
-├── static/                # Static files
-│   ├── css/               # Stylesheets
-│   │   └── portfolio.css  # Main stylesheet
-│   └── js/                # JavaScript files
-│       └── portfolio.js  # Main JavaScript file
-└── templates/             # HTML templates
-    └── index.html         # Homepage template
+├── app.py                      # Main application file
+├── requirements.txt            # Python dependencies
+├── .gitignore                  # Git ignore rules
+├── .env.example                # Environment variables template
+├── README.md                   # Project documentation
+├── src/                        # Source code package
+│   ├── config.py               # Application configuration
+│   ├── logger.py               # Logging configuration
+│   ├── exceptions.py           # Custom exceptions
+│   ├── routes/                 # Route handlers
+│   │   ├── index.py            # Index and health check routes
+│   │   └── contact.py          # Contact form submission route
+│   └── services/               # Business logic
+│       └── email_service.py    # SMTP email service
+├── static/                     # Static files
+│   ├── css/                    # Stylesheets
+│   │   └── portfolio.css       # Main stylesheet
+│   └── js/                     # JavaScript files
+│       └── portfolio.js        # Main JavaScript file
+└── templates/                  # HTML templates
+    └── index.html              # Homepage template
 ```
 
 ## Development

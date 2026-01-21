@@ -8,6 +8,7 @@ from flask import Flask
 
 from src.config import Config
 from src.logger import setup_logging
+from src.routes.contact import contact_bp
 from src.routes.index import index_bp
 
 
@@ -23,6 +24,7 @@ def create_app() -> Flask:
 
     # Register blueprints
     app.register_blueprint(index_bp)
+    app.register_blueprint(contact_bp)
 
     # Setup logging (only in production)
     if not Config.DEBUG:
@@ -37,4 +39,4 @@ app = create_app()
 
 if __name__ == '__main__':
     # Run the application in debug mode for development
-    app.run(debug=True)
+    app.run(debug=Config.DEBUG)
