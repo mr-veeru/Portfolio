@@ -10,7 +10,7 @@ from src.config import Config
 from src.logger import setup_logging
 from src.routes.contact import contact_bp
 from src.routes.index import index_bp
-
+from src.extensions import limiter
 
 def create_app() -> Flask:
     """
@@ -21,6 +21,9 @@ def create_app() -> Flask:
     """
     app = Flask(__name__)
     app.config.from_object(Config)
+
+    # Initialize rate limiter
+    limiter.init_app(app)
 
     # Register blueprints
     app.register_blueprint(index_bp)
