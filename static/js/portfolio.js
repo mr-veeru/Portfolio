@@ -165,25 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set initial active nav link
     updateActiveNavLink();
 
-    // Initialize intro text animation
-    const introText = document.querySelector('.intro-text');
-    if (introText) {
-        introText.style.animation = 'fadeInUp 1s ease';
-    }
-
-    // Scroll indicator functionality
-    const scrollIndicator = document.getElementById('scroll-to-about');
     const aboutSection = document.getElementById('about');
-
-    if (scrollIndicator && aboutSection) {
-        scrollIndicator.addEventListener('click', () => {
-            const offsetTop = aboutSection.offsetTop - NAVBAR_OFFSET;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        });
-    }
 
     // Statistics counter animation
     if (aboutSection) {
@@ -205,4 +187,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
         statsObserver.observe(aboutSection);
     }
+
+    // Contact form (AJAX): prevent redirect, show inline status
+    const contactForm = document.getElementById('contact-form');
+    if (!contactForm) return;
+
+    const submitBtn = document.getElementById('submit-btn');
+    const submitText = document.getElementById('submit-text');
+    const submitIcon = document.getElementById('submit-icon');
+
+    const statusEl =
+        document.getElementById('form-status') ||
+        Object.assign(document.createElement('p'), {
+            id: 'form-status',
+            className: 'form-status'
+        });
+    if (!statusEl.isConnected) {
+        statusEl.setAttribute('role', 'status');
+        statusEl.setAttribute('aria-live', 'polite');
+        contactForm.appendChild(statusEl);
+    }
+
+    const setStatus = (msg, ok) => {
+        statusEl.textContent = msg || '';
+        statusEl.classList.toggle('is-success', ok === true);
+        statusEl.classList.toggle('is-error', ok === false);
+    };
+
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        setStatus('', null);
+        if (submitBtn) submitBtn.disabled = true;
+        if (submitText) submitText.textContent = 'Sending...';
+        if (submitIcon) submitIcon.className = 'fas fa-spinner fa-spin';
+
+        try {
+            const res = await fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            });
+            const data = await res.json().catch(() => ({}));
+            const ok = !!(res.ok && data.success);
+            setStatus(
+                data.message ||
+                    (ok
+                        ? "Message sent successfully! I'll get back to you soon."
+                        : 'Unable to send message right now. Please try again later or email me directly.'),
+                ok
+            );
+            if (ok) contactForm.reset();
+        } catch {
+            setStatus('Network error. Please try again later or email me directly.', false);
+        } finally {
+            if (submitBtn) submitBtn.disabled = false;
+            if (submitText) submitText.textContent = 'Send Message';
+            if (submitIcon) submitIcon.className = 'fas fa-paper-plane';
+        }
+    });
 });

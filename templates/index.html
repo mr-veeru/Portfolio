@@ -24,7 +24,7 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <div class="logo">
+            <div>
                 <a href="#home" class="logo-link" aria-label="Home">
                     <span class="logo-text">Portfolio</span>
                 </a>
@@ -62,8 +62,8 @@
                 </p>
                 <div class="intro-buttons">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#about" class="btn btn-secondary">Learn More</a>
-                    <a href="{{ url_for('static', filename='documents/bannuru-veerendra-resume.pdf') }}" id="resume-btn" class="btn btn-resume" download>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="{{ url_for('static', filename='documents/bannuru-veerendra-resume.pdf') }}" class="btn btn-resume" download>
                         <i class="fas fa-download"></i>
                         <span>Download Resume</span>
                     </a>
@@ -81,16 +81,6 @@
                 </div>
             </div>
         </div>
-        <button class="scroll-indicator" id="scroll-to-about" aria-label="Scroll to next section">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <div class="arrow">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </button>
     </section>
 
     <!-- About Section -->
@@ -570,6 +560,75 @@
                     <div class="certification-issuer">Sololearn</div>
                     <div class="certification-description">Java Programming</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">07.</span>
+                Get In Touch
+            </h2>
+            <div class="contact-content">
+                <div>
+                    <p class="contact-description">
+                        I'm always open to discussing new projects, creative ideas, or opportunities to be part
+                        of your visions. Feel free to reach out if you'd like to collaborate or have any questions.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>mr.veeru68@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+91 9010423948</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Nandyal, Andhra Pradesh, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form" method="POST" action="{{ url_for('contact.submit_contact_form') }}">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required autocomplete="name">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required autocomplete="email">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" required autocomplete="off">
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required autocomplete="off"></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submit-btn">
+                        <span id="submit-text">Send Message</span>
+                        <i class="fas fa-paper-plane" id="submit-icon"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </section>
