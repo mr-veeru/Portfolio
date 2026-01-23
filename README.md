@@ -43,16 +43,27 @@ Portfolio/
 │   ├── config.py               # Application configuration
 │   ├── logger.py               # Logging configuration
 │   ├── exceptions.py           # Custom exceptions
+│   ├── extensions.py           # Flask extensions (rate limiter)
 │   ├── routes/                 # Route handlers
 │   │   ├── index.py            # Index and health check routes
-│   │   └── contact.py          # Contact form submission route
-│   └── services/               # Business logic
-│       └── email_service.py    # SMTP email service
+│   │   ├── contact.py          # Contact form submission route
+│   │   └── api.py              # RESTful API endpoints
+│   ├── services/               # Business logic
+│   │   └── email_service.py    # SMTP email service
+│   ├── data/                   # Data access layer
+│   │   └── data.py             # Portfolio data 
+
+│   └── models/                 # Data models
+│       ├── models.py           # Portfolio data models
+│       └── serializers.py      # Model serializers
 ├── static/                     # Static files
 │   ├── css/                    # Stylesheets
 │   │   └── portfolio.css       # Main stylesheet
-│   └── js/                     # JavaScript files
-│       └── portfolio.js        # Main JavaScript file
+│   ├── js/                     # JavaScript files
+│   │   └── portfolio.js        # Main JavaScript file
+│   └── documents/              # Document files
+│       ├── bannuru-veerendra-resume.pdf
+│       └── profile.jpg
 └── templates/                  # HTML templates
     └── index.html              # Homepage template
 ```

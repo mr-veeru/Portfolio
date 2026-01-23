@@ -83,10 +83,9 @@ def submit_contact_form() -> Tuple[Response, int]:
         except Exception as email_error:
             # Catch email-specific errors and return user-friendly message
             logger.error(f"Email sending failed for contact form from {name} ({email}): {str(email_error)}")
-            recipient_email: str = Config.RECIPIENT_EMAIL
             return jsonify({
                 'success': False,
-                'message': f'Unable to send email at this time. Please contact me directly at {recipient_email}'
+                'message': f'Unable to send email at this time. Please contact me directly at {Config.RECIPIENT_EMAIL}'
             }), 503  # Service Unavailable
 
     except ValidationError as e:
@@ -97,8 +96,7 @@ def submit_contact_form() -> Tuple[Response, int]:
         }), 400
     except Exception as e:
         logger.error(f"Unexpected error processing contact form from IP {client_ip}: {str(e)}", exc_info=True)
-        recipient_email: str = Config.RECIPIENT_EMAIL
         return jsonify({
             'success': False,
-            'message': f'An error occurred. Please try again or email me directly at {recipient_email}'
+            'message': f'An error occurred. Please try again or email me directly at {Config.RECIPIENT_EMAIL}'
         }), 500
